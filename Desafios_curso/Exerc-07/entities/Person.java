@@ -2,54 +2,47 @@ package entities;
 
 public class Person {
     private String name;
-    private int numCount;
-    private double priceDepositor;
+    private int holder;
+    private double balance;
 
 
-    public Person(int numCount, String name, double priceDepositor) {
+    public Person(int holder, String name, double initialDeposit) {
         this.name = name;
-        this.numCount = numCount;
-        this.priceDepositor = priceDepositor;
+        this.holder = holder;
+        deposit(initialDeposit);
     }
 
-    public Person(int numCount, String name) {
+    public Person(int holder, String name) {
         this.name = name;
-        this.numCount = numCount;
-    }
-
-    public Person() {
+        this.holder = holder;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getNumCount() {
-        return numCount;
+        return holder;
     }
 
-    public void depositor(double value) {
-        this.priceDepositor += value;
-        System.out.println("Dados da conta atual: R$" + priceDepositor);
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Dados da conta atual: R$" + balance);
     }
 
-    public void sacar(double value) {
-        if (this.priceDepositor < 5) {
+    public void withDrow(double amount) {
+        if (balance < 5) {
             System.out.println("AÇÃO INVALIDA, SALDO INSULFICIENTE");
         } else {
-            this.priceDepositor -= (value + 5);
-            System.out.println("Dados da conta atual: R$" + priceDepositor);
+            balance -= (amount + 5);
+            System.out.println("Dados da conta atual: R$" + balance);
         }
     }
 
     public String toString() {
-        return "Conta Numero " + numCount
+        return "Conta Numero " + this.getNumCount()
                 + ", " + " Autor da conta: "
-                + name + ", " + "Valor: R$"
-                + String.format("%.2f %n", priceDepositor);
+                + this.getName() + ", " + "Valor: R$"
+                + String.format("%.2f %n", balance);
     }
 }

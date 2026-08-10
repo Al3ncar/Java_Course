@@ -45,14 +45,14 @@ public class Main {
         System.out.print("Valor de Deposito: R$");
         double cacheValue = sc.nextDouble();
         System.out.println("Atualização de Cadastro: ");
-        person.depositor(cacheValue);
+        person.deposit(cacheValue);
         System.out.println(person);
         System.out.println(" ");
 
         System.out.print("Valor de Saque: R$");
         cacheValue = sc.nextDouble();
         System.out.println("Atualização de Cadastro: ");
-        person.sacar(cacheValue);
+        person.withDrow(cacheValue);
         System.out.println(person);
 
         sc.close();
