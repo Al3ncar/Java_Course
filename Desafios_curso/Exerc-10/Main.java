@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import java.util.Locale;
 
+import entities.People;
+
 public class Main {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
@@ -58,6 +60,39 @@ public class Main {
         System.out.printf("MEDIA = %.2f %n", resultVectSoma / vectSoma.length);
 
         //3.0 alturas
+        System.out.println("Altura");
+        System.out.println("-----------------------------------------");
 
+        System.out.print("Quantos pessoas seram digitadas? ");
+        int qtdPeople = sc.nextInt();
+        sc.nextInt();
+
+        People[] personVect = new People[qtdPeople];
+
+        double AllHights = 0;
+        for(int i = 0; i < personVect.length; i++){
+
+            System.out.println("Dados da " + (i + 1) + "pessoa:");
+            System.out.print("Nome: ");
+            String name = sc.nextLine();
+
+            System.out.print("Idade: ");
+            double heigths = sc.nextInt();
+            sc.nextLine();
+
+            System.out.print("Altura: ");
+            int yearsold = sc.nextInt();
+            sc.nextLine();
+
+            People person = new People(name, heigths, yearsold);
+            personVect[i] = person;
+            AllHights += heigths;
+        }
+
+        for(int i = 0; i < personVect.length; i++){
+
+        }
+
+        sc.close();
     }
 }
