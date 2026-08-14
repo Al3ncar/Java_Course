@@ -34,30 +34,30 @@ public class Main {
 //        }
 
         // 2.0 Soma_Vetor
-        System.out.println("soma_vetor");
-        System.out.println("-----------------------------------------");
-
-        System.out.print("Quantos numeros voce vai digitar? ");
-
-        double[] vectSoma;
-        double resultVectSoma, resultVectAvg;
-        StringBuilder printResult = new StringBuilder();
-
-        int qtdSomaVetor = sc.nextInt();
-        vectSoma = new double[qtdSomaVetor];
-        resultVectSoma = 0;
-
-
-        for (int i = 0; i < vectSoma.length; i++) {
-            System.out.print("Digite um numero: ");
-            vectSoma[i] = sc.nextInt();
-            resultVectSoma += vectSoma[i];
-            printResult.append(vectSoma[i]).append(" ");
-        }
-        System.out.println(" ");
-        System.out.println("VALORES = " + printResult);
-        System.out.printf("SOMA = %.2f %n", resultVectSoma);
-        System.out.printf("MEDIA = %.2f %n", resultVectSoma / vectSoma.length);
+//        System.out.println("soma_vetor");
+//        System.out.println("-----------------------------------------");
+//
+//        System.out.print("Quantos numeros voce vai digitar? ");
+//
+//        double[] vectSoma;
+//        double resultVectSoma, resultVectAvg;
+//        StringBuilder printResult = new StringBuilder();
+//
+//        int qtdSomaVetor = sc.nextInt();
+//        vectSoma = new double[qtdSomaVetor];
+//        resultVectSoma = 0;
+//
+//
+//        for (int i = 0; i < vectSoma.length; i++) {
+//            System.out.print("Digite um numero: ");
+//            vectSoma[i] = sc.nextInt();
+//            resultVectSoma += vectSoma[i];
+//            printResult.append(vectSoma[i]).append(" ");
+//        }
+//        System.out.println(" ");
+//        System.out.println("VALORES = " + printResult);
+//        System.out.printf("SOMA = %.2f %n", resultVectSoma);
+//        System.out.printf("MEDIA = %.2f %n", resultVectSoma / vectSoma.length);
 
         //3.0 alturas
         System.out.println("Altura");
@@ -65,32 +65,43 @@ public class Main {
 
         System.out.print("Quantos pessoas seram digitadas? ");
         int qtdPeople = sc.nextInt();
-        sc.nextInt();
+        sc.nextLine();
 
         People[] personVect = new People[qtdPeople];
+        int avgYears = 0;
+        double avgHights = 0;
 
-        double AllHights = 0;
-        for(int i = 0; i < personVect.length; i++){
+        for (int i = 0; i < personVect.length; i++) {
 
-            System.out.println("Dados da " + (i + 1) + "pessoa:");
+            System.out.println("Dados da " + (i + 1) + "º pessoa:");
             System.out.print("Nome: ");
             String name = sc.nextLine();
 
             System.out.print("Idade: ");
-            double heigths = sc.nextInt();
+            int yearsold = sc.nextInt();
             sc.nextLine();
 
             System.out.print("Altura: ");
-            int yearsold = sc.nextInt();
+            double heigths = sc.nextDouble();
             sc.nextLine();
 
             People person = new People(name, heigths, yearsold);
             personVect[i] = person;
-            AllHights += heigths;
+            avgHights += heigths;
+
+            if (yearsold < 16) avgYears += 1;
+
+            System.out.println(" ");
         }
 
-        for(int i = 0; i < personVect.length; i++){
+        double avgSixteenPercent = (double) (avgYears * 100) / personVect.length;
+        System.out.printf("Altura média: %.2f %n", avgHights / personVect.length);
+        System.out.println("Pessoas com menos de 16 anos: " + avgSixteenPercent + "%");
 
+        for (People person : personVect) {
+            if (person.getYears() < 16) {
+                System.out.println(person.getName());
+            }
         }
 
         sc.close();
