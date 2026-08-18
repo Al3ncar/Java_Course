@@ -105,43 +105,67 @@ public class Main {
 //        }
 
         //4.0 numeros_pares
-        System.out.println("Altura");
+//        System.out.println("Numeros Pares");
+//        System.out.println("-----------------------------------------");
+//
+//        System.out.print("Quantos numeros voce vai digitar? ");
+//        int qtdNumbers = sc.nextInt();
+//        sc.nextLine();
+//
+//        int[] numberVect = new int[qtdNumbers];
+//        int qtdPairNumbers = 0;
+//
+//        for (int i = 0; i < numberVect.length; i++) {
+//            System.out.print("Digite um numero: ");
+//            int numberValue = sc.nextInt();
+//            sc.nextLine();
+//
+//            numberVect[i] = numberValue;
+//
+//            if (numberVect[i] % 2 == 0) qtdPairNumbers += 1;
+//        }
+//
+//
+//        int[] resultNumber = new int[qtdPairNumbers];
+//        int indexResult = 0;
+//        System.out.print("NUMEROS PARES: ");
+//
+//        for (int i = 0; i < numberVect.length; i++) {
+//            if (numberVect[i] % 2 == 0) {
+//                resultNumber[indexResult] = numberVect[i];
+//                indexResult ++;
+//
+//                System.out.print(numberVect[i] + " ");
+//            }
+//        }
+//
+//
+//        System.out.println(" ");
+//        System.out.println("QUANTIDADE DE PARES = " + resultNumber.length);
+
+
+
+        //5.0 maior_posicao
+        System.out.println("Maior e sua Posição");
         System.out.println("-----------------------------------------");
 
         System.out.print("Quantos numeros voce vai digitar? ");
-        int qtdNumbers = sc.nextInt();
+        int qtdNumbers2 = sc.nextInt();
         sc.nextLine();
 
-        int[] numberVect = new int[qtdNumbers];
-        int qtdPairNumbers = 0;
+        double[] allNumberBig = new double[qtdNumbers2];
 
-        for (int i = 0; i < numberVect.length; i++) {
+        for(int i = 0; i < allNumberBig.length; i++){
             System.out.print("Digite um numero: ");
-            int numberValue = sc.nextInt();
-            sc.nextLine();
-
-            numberVect[i] = numberValue;
-
-            if (numberVect[i] % 2 == 0) qtdPairNumbers += 1;
+            double numberValue = sc.nextDouble();
+            allNumberBig[i] = numberValue;
         }
 
 
-        int[] resultNumber = new int[qtdPairNumbers];
-        int indexResult = 0;
-        System.out.print("NUMEROS PARES: ");
-
-        for (int i = 0; i < numberVect.length; i++) {
-            if (numberVect[i] % 2 == 0) {
-                resultNumber[indexResult] = numberVect[i];
-                indexResult += 1;
-
-                System.out.print(numberVect[i] + " ");
-            }
-        }
 
 
-        System.out.println(" ");
-        System.out.println("QUANTIDADE DE PARES = " + resultNumber.length);
+
+
 
         sc.close();
     }
