@@ -59,50 +59,89 @@ public class Main {
 //        System.out.printf("SOMA = %.2f %n", resultVectSoma);
 //        System.out.printf("MEDIA = %.2f %n", resultVectSoma / vectSoma.length);
 
-        //3.0 alturas
+//        //3.0 alturas
+//        System.out.println("Altura");
+//        System.out.println("-----------------------------------------");
+//
+//        System.out.print("Quantos pessoas seram digitadas? ");
+//        int qtdPeople = sc.nextInt();
+//        sc.nextLine();
+//
+//        People[] personVect = new People[qtdPeople];
+//        int avgYears = 0;
+//        double avgHights = 0;
+//
+//        for (int i = 0; i < personVect.length; i++) {
+//
+//            System.out.println("Dados da " + (i + 1) + "º pessoa:");
+//            System.out.print("Nome: ");
+//            String name = sc.nextLine();
+//
+//            System.out.print("Idade: ");
+//            int yearsold = sc.nextInt();
+//            sc.nextLine();
+//
+//            System.out.print("Altura: ");
+//            double heights = sc.nextDouble();
+//            sc.nextLine();
+//
+//            People person = new People(name, heights, yearsold);
+//            personVect[i] = person;
+//            avgHights += heights;
+//
+//            if (yearsold < 16) avgYears += 1;
+//
+//            System.out.println(" ");
+//        }
+//
+//        double avgSixteenPercent = (double) (avgYears * 100) / personVect.length;
+//        System.out.printf("Altura média: %.2f %n", avgHights / personVect.length);
+//        System.out.println("Pessoas com menos de 16 anos: " + avgSixteenPercent + "%");
+//
+//        for (People person : personVect) {
+//            if (person.getYears() < 16) {
+//                System.out.println(person.getName());
+//            }
+//        }
+
+        //4.0 numeros_pares
         System.out.println("Altura");
         System.out.println("-----------------------------------------");
 
-        System.out.print("Quantos pessoas seram digitadas? ");
-        int qtdPeople = sc.nextInt();
+        System.out.print("Quantos numeros voce vai digitar? ");
+        int qtdNumbers = sc.nextInt();
         sc.nextLine();
 
-        People[] personVect = new People[qtdPeople];
-        int avgYears = 0;
-        double avgHights = 0;
+        int[] numberVect = new int[qtdNumbers];
+        int qtdPairNumbers = 0;
 
-        for (int i = 0; i < personVect.length; i++) {
-
-            System.out.println("Dados da " + (i + 1) + "º pessoa:");
-            System.out.print("Nome: ");
-            String name = sc.nextLine();
-
-            System.out.print("Idade: ");
-            int yearsold = sc.nextInt();
+        for (int i = 0; i < numberVect.length; i++) {
+            System.out.print("Digite um numero: ");
+            int numberValue = sc.nextInt();
             sc.nextLine();
 
-            System.out.print("Altura: ");
-            double heigths = sc.nextDouble();
-            sc.nextLine();
+            numberVect[i] = numberValue;
 
-            People person = new People(name, heigths, yearsold);
-            personVect[i] = person;
-            avgHights += heigths;
-
-            if (yearsold < 16) avgYears += 1;
-
-            System.out.println(" ");
+            if (numberVect[i] % 2 == 0) qtdPairNumbers += 1;
         }
 
-        double avgSixteenPercent = (double) (avgYears * 100) / personVect.length;
-        System.out.printf("Altura média: %.2f %n", avgHights / personVect.length);
-        System.out.println("Pessoas com menos de 16 anos: " + avgSixteenPercent + "%");
 
-        for (People person : personVect) {
-            if (person.getYears() < 16) {
-                System.out.println(person.getName());
+        int[] resultNumber = new int[qtdPairNumbers];
+        int indexResult = 0;
+        System.out.print("NUMEROS PARES: ");
+
+        for (int i = 0; i < numberVect.length; i++) {
+            if (numberVect[i] % 2 == 0) {
+                resultNumber[indexResult] = numberVect[i];
+                indexResult += 1;
+
+                System.out.print(numberVect[i] + " ");
             }
         }
+
+
+        System.out.println(" ");
+        System.out.println("QUANTIDADE DE PARES = " + resultNumber.length);
 
         sc.close();
     }
