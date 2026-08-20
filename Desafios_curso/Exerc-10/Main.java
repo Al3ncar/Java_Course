@@ -144,28 +144,64 @@ public class Main {
 //        System.out.println("QUANTIDADE DE PARES = " + resultNumber.length);
 
 
-
         //5.0 maior_posicao
+//        System.out.println("Maior e sua Posição");
+//        System.out.println("-----------------------------------------");
+//
+//        System.out.print("Quantos numeros voce vai digitar? ");
+//        int qtdNumbers2 = sc.nextInt();
+//        sc.nextLine();
+//
+//        double[] allNumberBig = new double[qtdNumbers2];
+//        double bigValue = 0.0;
+//        int positionBigValue = 0;
+//
+//        for (int i = 0; i < allNumberBig.length; i++) {
+//            System.out.print("Digite um numero: ");
+//            allNumberBig[i] = sc.nextDouble();
+//
+//            if (bigValue < allNumberBig[i]) {
+//                bigValue = allNumberBig[i];
+//                positionBigValue = i;
+//            }
+//
+//        }
+//
+//        System.out.println(" ");
+//        System.out.println("MAIOR VALOR = " + bigValue);
+//        System.out.println("POSICAO DO MAIOR VALOR = " + positionBigValue);
+
+        //6.0 soma_vetores
         System.out.println("Maior e sua Posição");
         System.out.println("-----------------------------------------");
 
-        System.out.print("Quantos numeros voce vai digitar? ");
-        int qtdNumbers2 = sc.nextInt();
+        System.out.print("Quantos valores vai ter cada vetor? ");
+        int qtdValueInVect = sc.nextInt();
         sc.nextLine();
 
-        double[] allNumberBig = new double[qtdNumbers2];
+        int[] A = new int[qtdValueInVect];
+        int[] B = new int[qtdValueInVect];
+        int[] C = new int[qtdValueInVect];
 
-        for(int i = 0; i < allNumberBig.length; i++){
-            System.out.print("Digite um numero: ");
-            double numberValue = sc.nextDouble();
-            allNumberBig[i] = numberValue;
+        System.out.println("Digite os valores do vetor A: ");
+        for (int i = 0; i < A.length; i++) {
+            System.out.print("A - " + (i + 1) + "º: ");
+            A[i] = sc.nextInt();
         }
 
+        System.out.println(" ");
+        System.out.println("Digite os valores do vetor B: ");
+        for (int i = 0; i < B.length; i++) {
+            System.out.print("B - " + (i + 1) + "º: ");
+            B[i] = sc.nextInt();
+        }
 
-
-
-
-
+        System.out.println(" ");
+        System.out.println("VETOR RESULTANTE: ");
+        for (int i = 0; i < C.length; i++) {
+            C[i] = A[i] + B[i];
+            System.out.println(C[i]);
+        }
 
         sc.close();
     }
