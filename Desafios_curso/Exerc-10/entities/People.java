@@ -11,6 +11,11 @@ public class People {
         this.yearsold = yearsold;
     }
 
+    public People(String name, int yearsold){
+        this.name = name;
+        this.yearsold = yearsold;
+    }
+
     public String getName() {
         return name;
     }

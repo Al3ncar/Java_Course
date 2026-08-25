@@ -1,9 +1,14 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Locale;
 
+import entities.Alunos;
 import entities.People;
+import entities.Person;
 
 public class Main {
+
+
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
@@ -172,37 +177,207 @@ public class Main {
 //        System.out.println("POSICAO DO MAIOR VALOR = " + positionBigValue);
 
         //6.0 soma_vetores
-        System.out.println("Maior e sua Posição");
-        System.out.println("-----------------------------------------");
+//        System.out.println("Soma Vetores");
+//        System.out.println("-----------------------------------------");
+//
+//        System.out.print("Quantos valores vai ter cada vetor? ");
+//        int qtdValueInVect = sc.nextInt();
+//        sc.nextLine();
+//
+//        int[] A = new int[qtdValueInVect];
+//        int[] B = new int[qtdValueInVect];
+//        int[] C = new int[qtdValueInVect];
+//
+//        System.out.println("Digite os valores do vetor A: ");
+//        for (int i = 0; i < A.length; i++) {
+//            System.out.print("A - " + (i + 1) + "º: ");
+//            A[i] = sc.nextInt();
+//        }
+//
+//        System.out.println(" ");
+//        System.out.println("Digite os valores do vetor B: ");
+//        for (int i = 0; i < B.length; i++) {
+//            System.out.print("B - " + (i + 1) + "º: ");
+//            B[i] = sc.nextInt();
+//        }
+//
+//        System.out.println(" ");
+//        System.out.println("VETOR RESULTANTE: ");
+//        for (int i = 0; i < C.length; i++) {
+//            C[i] = A[i] + B[i];
+//            System.out.println(C[i]);
+//        }
 
-        System.out.print("Quantos valores vai ter cada vetor? ");
-        int qtdValueInVect = sc.nextInt();
+
+        //7.0 abaixo_da_media
+//        System.out.println("Abaixo da media");
+//        System.out.println("-----------------------------------------");
+//
+//        System.out.print("Quantos elementos vai ter o vetor? ");
+//        int qtdElVect = sc.nextInt();
+//        double result = 0;
+//        sc.nextLine();
+//
+//        double[] vectNumbers = new double[qtdElVect];
+//        for (int i = 0; i < vectNumbers.length; i++) {
+//            System.out.print("Digite um numero: ");
+//            vectNumbers[i] = sc.nextDouble();
+//            result += vectNumbers[i];
+//        }
+//        result = result / vectNumbers.length;
+//
+//        System.out.println(" ");
+//        System.out.printf("MEDIA DO VETOR = %.3f %n", result);
+//        System.out.println("ELEMENTOS ABAIXO DA MEDIA: ");
+//
+//        for (double value : vectNumbers) {
+//            if (value <= result) {
+//                System.out.println(value);
+//            }
+//        }
+
+
+        //8.0 media_pares
+//        mediaPares(sc);
+//        System.out.println(" ");
+//        mediaPares(sc);
+
+
+        //9.0 mais_velho
+//        System.out.println("Mais Velho");
+//        System.out.println("-----------------------------------------");
+//
+//        System.out.print("Quantas pessoas voce vai digitar? ");
+//        int veryOld = 0;
+//        int qtdPerson = sc.nextInt();
+//        sc.nextLine();
+//        People[] vectPerson = new People[qtdPerson];
+//
+//
+//
+//        for (int i = 0; i < vectPerson.length; i++) {
+//            System.out.println("Dados da " + (i + 1) + "a pessoa");
+//
+//            System.out.print("Nome: ");
+//            String name = sc.nextLine();
+//
+//            System.out.print("Idade: ");
+//            int years = sc.nextInt();
+//            sc.nextLine();
+//
+//
+//            People person = new People(name, years);
+//            vectPerson[i] = person;
+//
+//            if(veryOld <= years){
+//                veryOld = years;
+//            }
+//        }
+//
+//        for(People p : vectPerson){
+//            if(p.getYears() == veryOld){
+//                System.out.println("PESSOA MAIS VELHA: " + p.getName());
+//            }
+//        }
+//
+
+        // 10.0 aprovados
+//        System.out.println("Aprovados");
+//        System.out.println("-----------------------------------------");
+//
+//        System.out.print("Quantos alunos serao digitados? ");
+//        int qtdPerson = sc.nextInt();
+//        sc.nextLine();
+//
+//        Alunos[] vectAlunos = new Alunos[qtdPerson];
+//
+//
+//        for (int i = 0; i < vectAlunos.length; i++) {
+//            System.out.println("Digite nome, primeira e segunda nota do " + (i + 1) + "º aluno: ");
+//
+//            System.out.print("Nome: ");
+//            String name = sc.nextLine();
+//
+//            System.out.print("Nota 1º Semestre: ");
+//            double noteOne = sc.nextDouble();
+//            sc.nextLine();
+//
+//            System.out.print("Nota 2º Semestre: ");
+//            double noteTwo = sc.nextDouble();
+//            sc.nextLine();
+//
+//            System.out.println(" ");
+//            vectAlunos[i] = new Alunos(name, noteOne, noteTwo);
+//        }
+//
+//        for (int j = 0; j < vectAlunos.length; j++) {
+//            if (vectAlunos[j].getAvgNotes() >= 6) {
+//                System.out.println(vectAlunos[j].getName());
+//            }
+//        }
+
+
+        // 10.0 dados_pessoas
+        System.out.println("Dados Pessoas");
+
+        System.out.print("Quantos alunos serao digitados? ");
+        int qtdPerson2 = sc.nextInt();
         sc.nextLine();
 
-        int[] A = new int[qtdValueInVect];
-        int[] B = new int[qtdValueInVect];
-        int[] C = new int[qtdValueInVect];
 
-        System.out.println("Digite os valores do vetor A: ");
-        for (int i = 0; i < A.length; i++) {
-            System.out.print("A - " + (i + 1) + "º: ");
-            A[i] = sc.nextInt();
+        Person[] vectPeople2 = new Person[qtdPerson2];
+
+        for (int i = 0; i < vectPeople2.length; i++) {
+            Person p = new Person();
+
+            System.out.print("Altura da " + (i + 1) + "a pessoa: ");
+            p.setHeight(sc.nextDouble());
+            sc.nextLine();
+
+            System.out.print("Genero da " + (i + 1) + "a pessoa: ");
+            p.setSex(sc.nextLine().charAt(0));
+
+            vectPeople2[i] = p;
+            System.out.println(" ");
         }
 
-        System.out.println(" ");
-        System.out.println("Digite os valores do vetor B: ");
-        for (int i = 0; i < B.length; i++) {
-            System.out.print("B - " + (i + 1) + "º: ");
-            B[i] = sc.nextInt();
+        double maxValue = vectPeople2[0].getHeight();
+        double minValue = vectPeople2[0].getHeight();
+
+        for (Person people : vectPeople2) {
+            if (people.getHeight() >= maxValue) maxValue = people.getHeight();
+            if (people.getHeight() <= minValue) minValue = people.getHeight();
         }
 
-        System.out.println(" ");
-        System.out.println("VETOR RESULTANTE: ");
-        for (int i = 0; i < C.length; i++) {
-            C[i] = A[i] + B[i];
-            System.out.println(C[i]);
-        }
+        System.out.println(minValue);
+        System.out.println(maxValue);
 
         sc.close();
+    }
+
+    public static void mediaPares(Scanner sc) {
+        System.out.println("Media Pares");
+        System.out.println("-----------------------------------------");
+
+        System.out.print("Quantos elementos vai ter o vetor? ");
+        int qtdElementVect = sc.nextInt();
+        sc.nextLine();
+        double resultElVect = 0;
+        int qtdPairEl = 0;
+
+        double[] vectElementNumbers = new double[qtdElementVect];
+        for (int i = 0; i < vectElementNumbers.length; i++) {
+            System.out.print("Digite um numero: ");
+            vectElementNumbers[i] = sc.nextDouble();
+
+            if (vectElementNumbers[i] % 2 == 0) {
+                resultElVect += vectElementNumbers[i];
+                qtdPairEl++;
+            }
+        }
+        resultElVect = resultElVect / qtdPairEl;
+
+        if (qtdPairEl == 0) System.out.println("NENHUM NUMERO PAR ");
+        else System.out.printf("MEDIA DO VETOR = %.3f %n", resultElVect);
     }
 }
