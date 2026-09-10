@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Instant;
+import java.time.format.DateTimeFormatter;
 
 public class main {
     public static void main(String[] args){
@@ -26,5 +27,16 @@ public class main {
         System.out.println("d06 = " + d06);
         System.out.println("d07 = " + d07);
         System.out.println("--------------------------");
+
+        DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate d08 = LocalDate.parse("10/09/2026", fmt1);
+
+        DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        LocalDateTime d09 = LocalDateTime.parse("20/09/2026 04:34", fmt2);
+
+        System.out.println("d08 = " + d08);
+        System.out.println("d09 = " + d09);
+        System.out.println("--------------------------");
+
     }
 }
