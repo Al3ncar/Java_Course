@@ -1,10 +1,17 @@
+//import java.time.LocalDate;
+//import java.time.LocalDateTime;
+//import java.time.Instant;
+//import java.time.format.DateTimeFormatter;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
+import java.util.zip.DataFormatException;
+
 
 public class main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         LocalDate d01 = LocalDate.now();
         LocalDateTime d02 = LocalDateTime.now();
         Instant d03 = Instant.now();
@@ -34,9 +41,24 @@ public class main {
         DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         LocalDateTime d09 = LocalDateTime.parse("20/09/2026 04:34", fmt2);
 
+//        Podemos usar dessa forma também, conectar tudo em uma unica linha
+        LocalDate d10 = LocalDate.parse("20/07/2027", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
         System.out.println("d08 = " + d08);
         System.out.println("d09 = " + d09);
+        System.out.println("d10 = " + d10);
+
+
         System.out.println("--------------------------");
+
+
+        // Podemos usar o "of" caso os valores estejam em campos separados
+
+        LocalDateTime d12 = LocalDateTime.of(2026, 9, 23, 17, 30, 29);
+        System.out.println("d12 = " + d12);
+
+        System.out.println("--------------------------");
+
 
     }
 }
