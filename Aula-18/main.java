@@ -6,6 +6,7 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Instant;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.zip.DataFormatException;
 
@@ -59,6 +60,20 @@ public class main {
 
         System.out.println("--------------------------");
 
+        DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter fmt4 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
+        System.out.println("d13 = " + d04.format(fmt3));
+        System.out.println("d14 = " + fmt3.format(d04));
+        System.out.println("d15 = " + d04.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+
+
+        System.out.println("d16 = " + d05.format(fmt3));
+        System.out.println("d17 = " + d05.format(fmt4));
+        System.out.println("--------------------------");
+
+        DateTimeFormatter fmt5 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault());
+        System.out.println("d18 = " + d05.format(fmt5));
+        System.out.println("--------------------------");
     }
 }
