@@ -55,15 +55,33 @@ public class Index {
 
 
         Instant d12 = Instant.parse("2026-09-30T04:20:12Z");
-
         Instant pastD12 = d12.minus(7, ChronoUnit.DAYS);
         Instant nextD12 = d12.plus(10, ChronoUnit.DAYS);
 
+        System.out.println(" ");
         System.out.println("------------------------------");
         System.out.println("INSTANT MINUS AND PLUS ");
         System.out.println("------------------------------");
         System.out.println("pastD12: " + pastD12);
         System.out.println("nextD12: " + nextD12);
+
+        LocalDateTime r9 = d02.minusDays(10);
+
+        Duration t1 = Duration.between(pastD12, d12);
+        Duration t2 = Duration.between(r9, d02);
+        Duration t3 = Duration.between(r1.atTime(0, 0), d01.atTime(0, 0));
+        Duration t4 = Duration.between(r2.atStartOfDay(), d01.atStartOfDay());
+        Duration t5 = Duration.between(nextD12, d12);
+
+        System.out.println(" ");
+        System.out.println("------------------------------");
+        System.out.println("DURATION ");
+        System.out.println("------------------------------");
+        System.out.println("Duration t1: " + t1.toDays());
+        System.out.println("Duration t2: " + t2.toDays());
+        System.out.println("Duration t3: " + t3.toDays());
+        System.out.println("Duration t4: " + t4.toDays());
+        System.out.println("Duration t5: " + t5.toDays());
 
     }
 }
